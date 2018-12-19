@@ -5,8 +5,8 @@ window.onload = function() {
 
 	// Comments section
 
-	let myCheckbox = document.querySelector('#hasComments');
-	let commentSection = document.querySelector('#commentsection');
+	var myCheckbox = document.querySelector('#hasComments');
+	var commentSection = document.querySelector('#commentsection');
 
 	myCheckbox.addEventListener('change', function(){
 		if (myCheckbox.checked) {
@@ -18,8 +18,8 @@ window.onload = function() {
 
 	// submit button
 
-	let acceptTerms = document.querySelector('#acceptTerms');
-	let submitBtn = document.querySelector('#submitBtn');
+	var acceptTerms = document.querySelector('#acceptTerms');
+	var submitBtn = document.querySelector('#submitBtn');
 
 	acceptTerms.addEventListener('change', function(){
 		if (acceptTerms.checked) {
@@ -32,11 +32,21 @@ window.onload = function() {
 
 	// Select value
 
-	let showLink = document.querySelector('#showLink');
+	var showLink = document.querySelector('#showLink');
 
 	showLink.addEventListener('click', function(event){
 		event.preventDefault();
 		let theValue = document.querySelector('#mySelect').value;
 		document.querySelector('#selectResult').innerHTML = theValue;
 	});
+
+
+	// select do something to all input elements
+
+	var inputs = document.querySelectorAll('input');
+
+	for (var i = 0; i < inputs.length; i++) {
+		inputs[i].classList.add('dark');	
+	}
+	
 }
